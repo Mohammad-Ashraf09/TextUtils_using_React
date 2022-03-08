@@ -19,7 +19,7 @@ textarea:focus
         font-size: 13px;
     }
     textarea{
-        height: 380px;
+        height: 150px;
         font-size: 14px !important;
     }
 }
