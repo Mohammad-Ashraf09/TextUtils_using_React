@@ -1,0 +1,14 @@
+.navbar-brand
+{
+    color: #e6e200 !important;
+}
+
+@media (max-width: 420px)
+{
+    .navbar-brand{
+        margin-left: 0 !important;
+    }
+    .about{
+        margin-left: 0 !important;
+    }
+}
