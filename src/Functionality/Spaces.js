@@ -41,7 +41,7 @@ function Spaces(props) {
 
     return (
         <>
-            <button className='btn btn-success ms-3' onClick={spaceClickHandler}>Remove Extra Spaces</button>
+            <button className='btn btn-success ms-3 s' onClick={spaceClickHandler} style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':''}}>Remove Extra Spaces</button>
         </>
     )
 }

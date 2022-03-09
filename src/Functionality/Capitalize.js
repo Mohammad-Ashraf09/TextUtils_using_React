@@ -1,5 +1,4 @@
 import React from 'react';
-import './Capitalize.css';
 
 function Capitalize(props) {
     
@@ -17,7 +16,7 @@ function Capitalize(props) {
 
     return (
         <>
-            <button className='btn btn-success ms-3 x' onClick={capitalizeClickHandler}>Capitalize Every Word</button>
+            <button className='btn btn-success ms-3 c' onClick={capitalizeClickHandler} style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':''}}>Capitalize Every Word</button>
         </>
     )
 }

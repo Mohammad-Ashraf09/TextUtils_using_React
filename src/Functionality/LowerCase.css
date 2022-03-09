@@ -1,8 +1,0 @@
-@media (max-width:420px)
-{
-    .btn-success{
-        width: 150px !important;
-        border-radius: 25px;
-        margin-bottom: 10px;
-    }
-}

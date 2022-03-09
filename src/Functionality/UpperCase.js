@@ -8,7 +8,7 @@ function UpperCase(props) {
 
     return (
         <>
-            <button className='btn btn-success ms-3' onClick={upperClickHandler}>Convert to Uppercase</button>
+            <button className='btn btn-success ms-3 u' onClick={upperClickHandler} style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':''}}>Convert to Uppercase</button>
         </>
     )
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import './LowerCase.css';
 
 function LowerCase(props) {
 
@@ -9,7 +8,7 @@ function LowerCase(props) {
 
     return (
         <>
-            <button className='btn btn-success x' onClick={lowerClickHandler}>Convert to Lowercase</button>
+            <button className='btn btn-success l' onClick={lowerClickHandler} style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':''}}>Convert to Lowercase</button>
         </>
     );
 }

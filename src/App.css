@@ -1,3 +1,135 @@
 body{
     background-color: #e6e200;
 }
+
+.in-body{
+    display: none;
+    justify-content: end;
+}
+
+@media only screen and (max-width:992px)
+{
+    .in-nav{
+        display: none;
+    }
+    .in-body{
+        display: flex;
+        justify-content: end;
+        margin-right: 0.7rem;
+    }
+    label{
+        font-size: 12px;
+        align-items: center;
+        display: flex;
+        font-weight: bold;
+    }
+}
+
+/* -------------------- for Navbar.js ---------------- */
+.navbar-brand{
+    color: #e6e200 !important;
+}
+
+@media only screen and (max-width: 992px)
+{
+    .navbar-brand{
+        margin-left: 0 !important;
+    }
+    .about{
+        margin-left: 0 !important;
+    }
+}
+
+/* -------------------- for TextForm.js ---------------- */
+.length
+{
+    background-color: #556b2f;
+    color: #fff;
+    border-radius: 4px;
+    max-width: 380px;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+textarea:focus
+{
+    background-color: #dfff00 !important;
+}
+
+@media only screen and (max-width:450px)
+{
+    textarea{
+        height: 150px;
+        font-size: 14px !important;
+    }
+    .length{
+        width: 260px;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (min-width:450px) and (max-width:767px)
+{
+    textarea{
+        height: 150px;
+        font-size: 14px !important;
+    }
+    .length{
+        width: 250px;
+        font-size: 12px;
+    }
+}
+
+/* -------------------- for all the buttons ---------------- */
+@media only screen and (max-width:450px)
+{
+    .btn-success{
+        width: 150px !important;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        font-size: 12px !important;
+    }
+}
+
+@media only screen and (min-width:450px) and (max-width:767px)
+{
+    .btn-success{
+        width: 150px !important;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width:767px) and (max-width:1024px)
+{
+    .btn-success{
+        width: 180px !important;
+        border-radius: 25px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+}
+
+/* -------------------- for Capitalize.js ---------------- */
+@media only screen and (max-width:450px)
+{
+    .c{
+        margin-left: 0 !important;
+    }
+}
+
+/* -------------------- for Spaces.js ---------------- */
+@media only screen and (min-width:450px) and (max-width:1023px)
+{
+    .s{
+        margin-left: 0 !important;
+    }
+}
+
+/* -------------------- for Copy.js ---------------- */
+@media only screen and (max-width:450px)
+{
+    .copy{
+        margin-left: 0 !important;
+    }
+}

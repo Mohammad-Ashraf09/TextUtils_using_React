@@ -1,11 +1,8 @@
 import React, { useState } from 'react'
-import './TextForm.css'
 import Capitalize from './Functionality/Capitalize';
 import LowerCase from './Functionality/LowerCase';
 import Spaces from './Functionality/Spaces';
 import UpperCase from './Functionality/UpperCase';
-
-
 
 function TextForm(props) {
   
@@ -101,13 +98,21 @@ function TextForm(props) {
         countSpace(0);
         countWord(0);
     }
+
+    const copyHandler = () =>{
+        let text = document.getElementById("textbox");
+        text.select();
+        navigator.clipboard.writeText(text.value);
+    }
     
     return (
     <div>
-        <div className="mb-3 my-5">
-            <h2>{props.heading}</h2>
-            <textarea className="form-control" placeholder='Enter Text Here...' value={text} onChange={changeHandler} id="exampleFormControlTextarea1" rows="8"></textarea>
-            <div className='length'>
+        <div className="mb-3 my-3">
+            <h2 style={{color:props.mode==='dark'?'white':'black'}}>{props.heading}</h2>
+            <textarea id="textbox" className="form-control" placeholder='Enter Text Here...' value={text} onChange={changeHandler} rows="8"
+                      style={{backgroundColor:props.mode==='dark'?'#15292b':'white', color:props.mode==='dark'?'grey':''}}>
+            </textarea>
+            <div className='length' style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':'#556b2f'}}>
                 <div>Length (including extra spaces) : {len}</div>
                 <div>Total Letters (including symbols) : {letter}</div>
                 <div>Total Spaces : {space}</div>
@@ -115,11 +120,12 @@ function TextForm(props) {
             </div>
         </div>
         
-        <LowerCase text={text} setLower={fun1}/>
-        <UpperCase text={text} setUpper={fun2}/>
-        <Capitalize text={text} setCapital={fun3}/>
-        <Spaces text={text} len={len} letter={letter} space={space} word={word} setSpace={fun4} setLength={fun5} setLetter={fun6} setSpaces={fun7} />
-        <button className='btn btn-success x ms-3' onClick={fun8}>Remove Text</button>
+        <LowerCase text={text} setLower={fun1} mode={props.mode}/>
+        <UpperCase text={text} setUpper={fun2} mode={props.mode}/>
+        <Capitalize text={text} setCapital={fun3} mode={props.mode}/>
+        <Spaces text={text} len={len} letter={letter} space={space} word={word} setSpace={fun4} setLength={fun5} setLetter={fun6} setSpaces={fun7} mode={props.mode}/>
+        <button className='btn btn-success ms-3 copy' onClick={copyHandler} style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':''}}>Copy Text</button>
+        <button className='btn btn-success ms-3' onClick={fun8} style={{backgroundColor:props.mode==='dark'?'rgb(20 72 61)':''}}>Clear Textbox</button>
 
     </div>
   );

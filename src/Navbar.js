@@ -1,5 +1,4 @@
 import React from 'react'
-import './Navbar.css'
 
 function Navbar(props) {
   return (
@@ -19,6 +18,10 @@ function Navbar(props) {
                             <a className="nav-link ms-4 about" href="/">{props.aboutText}</a>
                         </li>
                     </ul>
+                    <div className="form-check form-switch text-light in-nav">
+                        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{props.mode==='light'?'Dark Mode':'Light Mode'}</label>
+                    </div>
                 </div>
             </div>
         </nav>
