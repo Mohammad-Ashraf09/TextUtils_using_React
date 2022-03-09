@@ -14,12 +14,13 @@ body{
     }
     .in-body{
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
         margin-right: 0.7rem;
     }
     label{
         font-size: 12px;
         align-items: center;
+        margin-left: 4px;
         display: flex;
         font-weight: bold;
     }
