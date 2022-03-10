@@ -22,18 +22,23 @@ function Spaces(props) {
         props.setSpace(s);      // sending to parent
         // this below code repeating because when we removed extra spaces its length dereases and that's why we need all this again
         //------------------------------- total length---------
-        let content = s;
-        let len=s.length
-        props.setLength(len);      // sending to parent
+        let len=s.length;
+        let enter=0;
+        for(let i=1; i<s.length; i++)
+        {
+            if(s[i]==='\n')    // counting number of enter in string
+                enter++;
+        }
+        props.setLength(len-enter);      // sending to parent
 
         //-------------------------- total letters ----------
         let count=0;
         for(let i=0; i<len; i++)
         {
-            if(content[i]!=' ')
+            if(s[i]!=' ')
                 count+=1;
         }
-        props.setLetter(count);      // sending to parent
+        props.setLetter(count-enter);      // sending to parent
         
         //------------------------ total spaces -------------
         props.setSpaces(len-count);      // sending to parent

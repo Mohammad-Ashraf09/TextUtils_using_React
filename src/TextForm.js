@@ -11,13 +11,20 @@ function TextForm(props) {
     const [letter, countLetter] = useState(0);
     const [space, countSpace] = useState(0);
     const [word, countWord] = useState(0);
-
+    
     const changeHandler = (event) =>{
         let content = event.target.value;
         
         //------------------------------- total length---------
+        let str = content;
+        let enter=0;
+        for(let i=1; i<str.length; i++)
+        {
+            if(str[i]==='\n')    // counting number of enter in string
+                enter++;
+        }
         let len=event.target.value.length
-        countLength(len);
+        countLength(len-enter);  // now removing that enter from length so that string length is without enter
 
         //-------------------------- total letters ----------
         let count=0;
@@ -26,13 +33,12 @@ function TextForm(props) {
             if(content[i]!=' ')
                 count+=1;
         }
-        countLetter(count);
+        countLetter(count-enter);
         
         //------------------------ total spaces -------------
         countSpace(len-count);
 
         //------------------------- total words --------
-        let str = content;
         str = str.trim();
         
         for(let i=1; i<str.length; i++)
@@ -52,7 +58,7 @@ function TextForm(props) {
         let words=0;
         for(let i=1; i<str.length; i++)
         {
-            if(str[i]==' ')
+            if(/\s/.test(str[i]))   // this will deal all white spaces (spaces and enter)
                 words++;
         }
         countWord(words+1);
@@ -100,9 +106,8 @@ function TextForm(props) {
     }
 
     const copyHandler = () =>{
-        let text = document.getElementById("textbox");
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
+        document.getSelection().removeAllRanges();
     }
     
     return (
